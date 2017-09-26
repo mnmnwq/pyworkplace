@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小游戏平台</title>
+</head>
+<style type="text/css">
+    *{margin:0;padding: 0;}
+    .box{width:1000px;height:100%;margin:130px auto;}
+    .box ul{width:900px;height:800px;margin:0 auto;}
+    .box ul li{width:72px;float: left;height:72px;list-style-type: none;padding-left: 15px;padding-bottom: 60px;}
+    .header{width:1000px;height:100px; margin:0 auto;background: #ccffcc;}
+    .header .ul{width:900px;height:800px;margin:0 auto;}
+    .header ul li{float:left;list-style-type:none;padding-left: 100px;}
+    .box .text{width:550px;height:110px;position: absolute;top:110px;font-size: 40px;}
+    .but{text-align: center;}
+</style>
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="/">首页</a></li>
+            <li><a href="http://tanzhouedu.com" target="_blank">电商平台</a></li>
+            <li><a href="http://litianqiang.com" target="_blank">搜索引擎</a></li>
+            <li><a href="http://bbs/litianqiang.com" target="_blank">python论坛</a></li>
+        </ul>
+    </div>
+    <div class="box">
+        <ul>
+            $for i in data:
+                <li>
+                    <a href="/$:i.id">
+                        <span class="new"></span>
+                        <img src="$:i.imgurl" alt="$:i.name">
+                        $:i.name
+                    </a>
+                </li>
+        </ul>
+        <div class="but">
+            $if int(page) != 0:
+            <form action="/page/$:(int(page)-1)">
+                <input type="submit" value="上一页" style="background: #99cccc no-repeat;width:180px;height:37px;">
+            </form>
+            $if int(page) < 10:
+        </div>
+    </div>
+</body>
+</html>
